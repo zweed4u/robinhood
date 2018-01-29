@@ -42,7 +42,7 @@ class RobinHood():
         params = kwargs.get('params', None)
         added_headers = kwargs.get('headers', None)
         if added_headers is not None:
-            for key, value in kwargs.get('headers', None).items():
+            for key, value in added_headers.items():
                 self.headers[key] = value
         return requests.request(method, f'{self.base_url}{endpoint}', params=params, data=data, json=json,
                                 headers=self.headers)
